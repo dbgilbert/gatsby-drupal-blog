@@ -3,13 +3,14 @@ import { graphql } from 'gatsby'
 
 // TODO: import Bio component
 import Layout from '../components/layout'
+import Bio from '../components/bio'
 
 export default function BlogPost({ data }) {
   const { article } = data
   return (
     <Layout>
+      <Bio />
       <div dangerouslySetInnerHTML={{ __html: article.fields.markdownBody.childMarkdownRemark.html }} />
-      {/* TODO: render Bio component */}
     </Layout>
   ) 
 }

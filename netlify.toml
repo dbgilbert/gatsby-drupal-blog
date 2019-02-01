@@ -1,3 +1,3 @@
 [build]
-  publish = "labs/final/public"
-  command = "cd labs/final && yarn build"
+  publish = "labs/05-deploying/public"
+  command = "cd labs/05-deploying && yarn build"
