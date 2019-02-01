@@ -17,7 +17,7 @@ export default function BlogPost({ data }) {
           [
             {
               property: 'og:image',
-              content: `${featuredImage.src}` // TODO: prefix with siteUrl
+              content: `${data.site.siteMetadata.siteUrl}${featuredImage.src}` // TODO: prefix with siteUrl
             },
             {
               property: 'og:image:height',
@@ -38,7 +38,11 @@ export default function BlogPost({ data }) {
 
 export const blogPostQuery = graphql`
   query GetBlogPostBySlug($slug: String!) {
-    # TODO: add siteUrl query
+    site {
+      siteMetadata {
+        siteUrl
+      }
+    }
 
     article: nodeArticle(fields:{slug:{eq:$slug}}) {
       relationships {
